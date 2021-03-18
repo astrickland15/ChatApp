@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-{% extends "layout.html" %}
-{% block content %}
-
-=======
 <!-- {% extends "layout.html" %} -->
 {% block content %}
->>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
 <div id= "name_new_channel">
 <form class="form-inline" >
 <div class="form-group mx-sm-3 mb-2">
@@ -14,7 +8,7 @@
     <button class = "btn btn-info mb-2" id="channel_button" disabled=true type = "button">Create</button> 
 </form>
 </div>
-<<<<<<< HEAD
+
 <!-- <h1 id="page_name"></h1><br> -->
 <p>Welcome, <strong>{{ user }}</strong></p>
 
@@ -40,7 +34,7 @@
                 <ul id="message_list">
                 </ul>
             </div>
-=======
+
 <h1 id="page_name"></h1><br>
 <p><strong>{{ user }}</strong> has entered the chat...</p>
 
@@ -57,15 +51,13 @@
         <div id = "message_history">
             <ul id="message_list">
             </ul>
->>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
         </div>
     </div>
     <div class = "form-group">
         <textarea class="form-control" id="myMessage" rows="1" placeholder="Type Something Here..."></textarea>
     </div>
     <div class = "form-group">
-<<<<<<< HEAD
-        <button class = "btn btn-primary" id="postButton" type = "button">Post</button> 
+    <button class = "btn btn-primary" id="postButton" type = "button">Post</button> 
     </div>
 
 <!-- /////////////////////////////////////////////////////////////////// -->
@@ -74,14 +66,7 @@
     <script>
         var username = '{{ user }}';
         var connectedUsers = '{{ connectedUsers|tojson }}';
-=======
-        <button class = "btn btn-primary" id="sendbutton" type = "button">Post</button> 
-    </div>
-
-    <script>
-        var username = '{{ user }}';
->>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
     </script>
-      
+   
           
     {% endblock %}
