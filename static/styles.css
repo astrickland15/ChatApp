@@ -1,0 +1,92 @@
+h1{
+    color: blue;
+}
+
+#message_list li {
+    color: green;
+    display: block;
+    font-size: 18px;
+    
+}
+
+#channelBar ul{
+    list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: green;
+    width: auto;
+    
+}
+
+/* display links in a single row*/
+#channelBar  li{
+    display: inline;
+}
+#channelBar li a {
+    display: inline;
+    background-color: green;
+}
+
+/*Display links in blocks*/
+
+#channelBar a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px;
+}
+
+/*change the link colour when hovering*/
+
+#channelBar a:hover{
+
+    color: white;
+    background-color: red;
+    text-decoration: none;
+
+}
+#name_new_channel{
+    display: none;
+}
+#getHistory{
+    display: none;
+}
+/* ////////////////////////////////////////// */
+#container{
+    height: 325px;
+    width: 700px;
+    overflow: scroll;
+}
+div::-webkit-scrollbar{
+    width: 12px;
+    
+}
+
+div::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0.3);
+    border-radius: 10px;
+    
+}
+
+div::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0.3);
+    background-color: blue;
+}
+
+#message_history{
+    height: 1000px;
+}
+
+#myMessage{
+    width: 700px;
+}
+
+#loggedInUsers li{
+    display: inline;
+}
