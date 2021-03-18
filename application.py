@@ -23,14 +23,7 @@ def chat(msg):
     print("Message: " + msg)
     add_to_text_file(msg)
     send(msg, broadcast = True)
-  
-@socketio.on("message")
-def chat(msg):
-    print("Message: " + msg)
-    """ add_to_text_file(msg)
-    send(msg, broadcast = True) """
-    
-
+ 
 def add_to_text_file(word):
     f = open("c:\\test\chatHistory.txt", "a")
     f.write(word + "\n")
