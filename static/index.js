@@ -5,6 +5,7 @@ $(document).ready(function() {
         $('#goChat').attr('disabled', false);
     });
 
+<<<<<<< HEAD
     // display title of last visited channel /////////////////////
    /*  if($('#page_name').html() == '') {
         document.getElementById('page_name').innerHTML = 'General Chat';
@@ -56,6 +57,34 @@ $(document).ready(function() {
         $('#myMessage').val('');
         //don't refresh the page after posting message
         return false;
+=======
+    // display title of last visited channel 
+    if($('#page_name').html() == '') {
+        document.getElementById('page_name').innerHTML = 'General Chat';
+    } else {
+        document.getElementById('page_name').innerHTML = localStorage.getItem('channel_title');
+    }
+          
+    // display chat history by applicable channel
+    displayChatHistory();
+    
+    // setup socket connection
+    var socket = io.connect('http://127.0.1:5000');
+    
+    // display new chat message
+    socket.on('message', function(msg) {
+        $('#message_list').append('<li>' + msg + '</li>');
+        console.log('Received message');
+                        
+    });
+
+    // add new message
+    $('#sendbutton').on('click', function() {
+        var message = document.getElementById('myMessage').value;
+                
+        var now = currentTime();
+        socket.send(now + " - " + username + ": " + message);
+>>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
        
         var newItem = {
             'channel' : document.getElementById('page_name').innerHTML, 
@@ -63,6 +92,7 @@ $(document).ready(function() {
             'time' : now,
             'message' : message
         };
+<<<<<<< HEAD
     })  
     
     // add leading zero to minutes
@@ -93,6 +123,10 @@ $(document).ready(function() {
 
 
         /* // take messages object and make it a blank array
+=======
+        
+        // take messages object and make it a blank array
+>>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
         messages = JSON.parse(localStorage.getItem('newItem') || '[]');
 
         // add message to array
@@ -105,6 +139,7 @@ $(document).ready(function() {
         
         // add contents of array to localStorage
         localStorage.setItem('newItem', JSON.stringify(messages));
+<<<<<<< HEAD
  */
         // clear the message box
        /*  $('#myMessage').val(''); */
@@ -113,6 +148,17 @@ $(document).ready(function() {
         
    // });
     /* // title of page changes and channel chat appears by clicking the appropriate channel
+=======
+
+        // clear the message box
+        $('#myMessage').val('');
+
+        //don't refresh the page after posting message
+        return false;
+               
+    });
+    // title of page changes and channel chat appears by clicking the appropriate channel
+>>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
     var ul = document.getElementById('channel_list');
     ul.onclick = function(event) {
         var target = getEventTarget(event);
@@ -121,9 +167,15 @@ $(document).ready(function() {
         localStorage.setItem('channel_title', target.innerHTML);
         
         // display chat history according to channel 
+<<<<<<< HEAD
         $('#message_list').empty(); */
 
        /*  var chat_history = JSON.parse(localStorage.getItem('newItem') || '[]');
+=======
+        $('#message_list').empty();
+
+        var chat_history = JSON.parse(localStorage.getItem('newItem') || '[]');
+>>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
 
         if(chat_history) {
             for(i = 0; i < chat_history.length; i++) {
@@ -131,8 +183,13 @@ $(document).ready(function() {
                     $('#message_list').append('<li>' + chat_history[i].time + " - " + chat_history[i].username + ": " + chat_history[i].message + '<li>');
                 }
             }
+<<<<<<< HEAD
         } */
      /*  
+=======
+        }
+      
+>>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
         //display title of last visited channel
         document.getElementById('page_name').innerHTML = localStorage.getItem('channel_title');
     }
@@ -180,15 +237,22 @@ $(document).ready(function() {
             
             // add channel to localStorage
             localStorage.setItem('channel', JSON.stringify(channels));
+<<<<<<< HEAD
     }) */
 
    /*  function channelAlreadyExists(){
+=======
+    })
+})
+    function channelAlreadyExists(){
+>>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
         alert('Channel already exists! Please choose another name.');
     }
 
     // function converting input channel names to lowercase and trim whitespace
     function trimLowerCase(word){
         return word.toLowerCase().trim();
+<<<<<<< HEAD
     } */
 
     
@@ -203,19 +267,54 @@ $(document).ready(function() {
 
 
    /*  // function to display chat history and created channels
+=======
+    }
+
+    // add leading zero to minutes
+    function add_zero(value) {
+        if(value < 10) {
+            return '0' + value;
+        } else {
+            return value;
+        }
+    }
+    // gets name of channel clicked
+    function getEventTarget(e) {
+        e = e || window.event;
+        return e.target || e.srcElement; 
+    }
+
+    // function to return current date and time
+    function currentTime() {
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+        var today = new Date();
+        var month = months[today.getMonth()];
+        var date = month + ' ' + today.getDate();
+        var dt = today.getHours() + ':' + add_zero(today.getMinutes());
+        return date + ' ' + dt;
+    }
+
+    // function to display chat history and created channels
+>>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
     function displayChatHistory() {
         // temporarily cleared messages so they can appear under correct channel
         $('#message_list').empty();
 
         var chat_history = JSON.parse(localStorage.getItem('newItem') || '[]');
+<<<<<<< HEAD
  */
         /* if(chat_history) {
+=======
+
+        if(chat_history) {
+>>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
             for(i = 0; i < chat_history.length; i++) {
                 if(chat_history[i].channel == document.getElementById('page_name').innerHTML) {
                     $('#message_list').append('<li>' + chat_history[i].time + " - " + chat_history[i].username + ": " + chat_history[i].message + '<li>');
                 }
             }
         }
+<<<<<<< HEAD
     } */
         
        /*  var show_channels = JSON.parse(localStorage.getItem('channel') || '[]'); */
@@ -230,3 +329,14 @@ $(document).ready(function() {
         $('#getHistory').css('display', 'inline');
     }) */
 
+=======
+    }
+        
+        var show_channels = JSON.parse(localStorage.getItem('channel') || '[]');
+        
+        $('channel_list').detach();
+        for(i = 0; i < show_channels.length; i++) {
+            $('#channel_list').append('<li><a type="button">' + show_channels[i].channel + '</a></li>');
+    }
+})
+>>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8

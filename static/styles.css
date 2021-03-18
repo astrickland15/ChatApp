@@ -3,7 +3,11 @@ h1{
 }
 
 #message_list li {
+<<<<<<< HEAD
     color: green;
+=======
+    color: blue;
+>>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
     display: block;
     font-size: 18px;
     
@@ -53,6 +57,7 @@ h1{
 }
 #getHistory{
     display: none;
+<<<<<<< HEAD
 }
 /* ////////////////////////////////////////// */
 #container{
@@ -89,4 +94,6 @@ div::-webkit-scrollbar-thumb{
 
 #loggedInUsers li{
     display: inline;
+=======
+>>>>>>> be60a6fcec755b8a83639492fb5a799946e34cf8
 }
